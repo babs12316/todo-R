@@ -1,12 +1,13 @@
 import React from "react";
 import ItemList from "./components/ItemList";
+import { AppContainer, Title } from "./components/shared/StyledComponents";
 
 const App = () => {
   return (
-    <div>
-      <h2>Todo</h2>
+    <AppContainer>
+      <Title> Todo </Title>
       <ItemList />
-    </div>
+    </AppContainer>
   );
 };
 
