@@ -47,7 +47,7 @@ const ItemList: React.FC = () => {
         <ItemInput
           type="text"
           value={itemText}
-          onChange={(e) => dispatch(addTodo(e.target.value))}
+          onChange={(e)=>setItemText(e.target.value)} 
         />
       </Item>
     </List>
