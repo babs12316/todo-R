@@ -30,6 +30,13 @@ const ItemList: React.FC = () => {
   const dispatch = useAppDispatch();
   const [itemText,setItemText] = useState('')
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>)=>{
+    if (e.key === 'Enter') {
+     dispatch(addTodo(itemText))
+     setItemText('')
+   }
+ }
+ 
   return (
     <List>
       {items.map((item) => (
@@ -48,6 +55,7 @@ const ItemList: React.FC = () => {
           type="text"
           value={itemText}
           onChange={(e)=>setItemText(e.target.value)} 
+          onKeyPress={handleKeyPress}
         />
       </Item>
     </List>
