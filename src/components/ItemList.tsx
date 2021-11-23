@@ -1,29 +1,7 @@
 import React, {useState} from "react";
-import styled from "styled-components";
 import { addTodo, editTodo } from "../todo/todoAC";
 import { useAppDispatch, useAppSelector } from "../types";
-
-const List = styled.ul`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-`;
-
-const Item = styled.li`
-  width: 100%;
-  margin: 4px 0;
-  display: flex;
-  flex-direction: row;
-`;
-
-const ItemInput = styled.input`
-  width: 100%;
-`;
-
-const ItemCheckbox = styled.input.attrs({
-  type: "checkbox",
-})``;
+import { Item, ItemCheckbox, ItemInput, List } from "./shared/StyledComponents";
 
 const ItemList: React.FC = () => {
   const items = useAppSelector((s) => s.todos.items);
@@ -36,7 +14,7 @@ const ItemList: React.FC = () => {
      setItemText('')
    }
  }
- 
+
   return (
     <List>
       {items.map((item) => (
