@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { addTodo, editTodo } from "../todo/todoAC";
 import { useAppDispatch, useAppSelector } from "../types";
@@ -28,6 +28,8 @@ const ItemCheckbox = styled.input.attrs({
 const ItemList: React.FC = () => {
   const items = useAppSelector((s) => s.todos.items);
   const dispatch = useAppDispatch();
+  const [itemText,setItemText] = useState('')
+
   return (
     <List>
       {items.map((item) => (
@@ -44,7 +46,7 @@ const ItemList: React.FC = () => {
         <ItemCheckbox />
         <ItemInput
           type="text"
-          value=""
+          value={itemText}
           onChange={(e) => dispatch(addTodo(e.target.value))}
         />
       </Item>
