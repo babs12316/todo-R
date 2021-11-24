@@ -6,10 +6,18 @@ export const AppContainer = styled.div`
   align-items: center;
   justify-content: center;
   width:100%;
+  position:absolute;
+  top:-30px;
   `;
 
 export const Title = styled.h2`
-  font-size:25px;
+  font-size: ${props => `${props.theme.fontSizes.large}`};
+  background: ${props => `${props.theme.colors.backgroundColor}`};
+  color: ${props => `${props.theme.colors.headingColor}`};
+  border-top: ${props => `10px solid ${props.theme.colors.stripColor}`};
+  width:100%;
+  text-align:center;
+  padding:5px;
 `;
 
 export const List = styled.ul`
@@ -31,12 +39,12 @@ export const Item = styled.li`
 export const ItemInput = styled.input`
   width: 100%;
   padding:10px;
-  font-size:18px;
-  border: 1px solid #ccc;
+  font-family: ${props => `${props.theme.font}`};
+  font-size: ${props => `${props.theme.fontSizes.medium}`};
+  border: ${props => `1px solid ${props.theme.colors.borderColor}`};
   &:focus {
-    outline: 1px solid #A9A9A9;
-}
-`;
+    outline: ${props => `1px solid ${props.theme.colors.borderFocusColor}`};
+ `;
 
 export const ItemCheckbox = styled.input.attrs({
   type: "checkbox",
@@ -46,8 +54,7 @@ export const ItemCheckbox = styled.input.attrs({
 -webkit-transform: scale(2); /* Safari and Chrome */
 -o-transform: scale(2); /* Opera */
 transform: scale(2);
-height:32px;
-outline: 1px solid red;
+height:35px;
 `;
 
 
